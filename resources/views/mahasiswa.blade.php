@@ -52,7 +52,15 @@
         </tr>
       </thead>
       <tbody>
-        <?php $nilai_awal = 0; ?>
+        @for ($i = 0; $i < $jumlah; $i++)
+            <tr>
+              <td>{{ $npm[$i] }}</td>
+              <td>{{ $nama[$i] }}</td>
+              <td>Laki-Laki</td>
+              <td>21 Januari 2004</td>
+            </tr>
+        @endfor
+        {{-- <#?php $nilai_awal = 0; ?>
         @while ($nilai_awal < $jumlah)
         <tr>
           <td>{{ $npm[$nilai_awal] }}</td>
@@ -60,8 +68,8 @@
           <td>Laki-Laki</td>
           <td>08 November 2003</td>
         </tr>
-        <?php $nilai_awal++ ?>
-        @endwhile
+        <#?php $nilai_awal++ ?>
+        @endwhile --}}
       </tbody>
     </table>
   </div>
