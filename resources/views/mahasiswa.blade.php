@@ -35,8 +35,41 @@
     </div>
   </nav>
 
-  <div class="container" style="margin-left: 30px">
+  <div class="container">
     <h1>This is Students Page</h1>
+
+      {{-- ROWSPAN = Untuk menggabungkan Baris
+           COLSPAN = Untuk menggabungkan Kolom
+    --}}
+
+    <table class="table text-center table-info table-sm table-hover table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>NPM</th>
+          <th>Nama Mahasiswa</th>
+          <th>Jenis Kelamin</th>
+          <th colspan="2">TTL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2109010034</td>
+          <td>Muhammad Iqbal Faiz</td>
+          <td rowspan="3">Laki-Laki</td>
+          <td>08 November 2003</td>
+        </tr>
+        <tr>
+          <td>2109010010</td>
+          <td>Agita Muhammad Ramadhan S</td>
+          <td>10 November 2003</td>
+        </tr>
+        <tr>
+          <td>2109010012</td>
+          <td>Rizky Wira Nanda P</td>
+          <td>09 Januari 2004</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
