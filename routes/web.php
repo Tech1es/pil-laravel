@@ -19,21 +19,24 @@ Route::get('profile', function () {
 });
 
 Route::get('mahasiswa', function () {
-    return view('mahasiswa');
+    $npm = [123,124,125,126];
+    $nama = ['Muhammad Iqbal Faiz','Agita Muhammad Ramadhan S','Rizky Wira Nanda P','Anugrah TG Putra A H'];
+    $jumlah = count($npm);
+    return view('mahasiswa', compact('npm', 'jumlah', 'nama'));
 });
 
-// While Loop
-Route::get('array', function(){
-    $nilai_awal = 1;
-    while ($nilai_awal <= 5) {
-        echo 'Hello Laravel ' . $nilai_awal . 'x<br>';
-        $nilai_awal++;
-    }
-});
+// // While Loop
+// Route::get('array', function(){
+//     $nilai_awal = 1;
+//     while ($nilai_awal <= 5) {
+//         echo 'Hello Laravel ' . $nilai_awal . 'x<br>';
+//         $nilai_awal++;
+//     }
+// });
 
-// For Loop
-Route::get('array', function(){
-    for ($i=1; $i <= 5; $i++) { 
-        echo 'Hello World ' . $i . 'x<br>';
-    }
-});
+// // For Loop
+// Route::get('array', function(){
+//     for ($i=1; $i <= 5; $i++) { 
+//         echo 'Hello World ' . $i . 'x<br>';
+//     }
+// });
