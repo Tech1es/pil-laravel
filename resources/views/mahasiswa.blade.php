@@ -38,41 +38,66 @@
   <div class="container">
     <h1>This is Students Page</h1>
 
-      {{-- ROWSPAN = Untuk menggabungkan Baris
-           COLSPAN = Untuk menggabungkan Kolom
-    --}}
-
-    <table class="table text-center table-info table-sm table-hover table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>NPM</th>
-          <th>Nama Mahasiswa</th>
-          <th>Jenis Kelamin</th>
-          <th colspan="2">TTL</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for ($i = 0; $i < $jumlah; $i++)
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Tabel Mahasiswa</h4>
+        <table class="table text-center table-info table-sm table-hover table-bordered table-striped">
+          <thead>
             <tr>
-              <td>{{ $npm[$i] }}</td>
-              <td>{{ $nama[$i] }}</td>
-              <td>Laki-Laki</td>
-              <td>21 Januari 2004</td>
+              <th>NPM</th>
+              <th>Nama Mahasiswa</th>
+              <th>Jenis Kelamin</th>
+              <th colspan="2">TTL</th>
             </tr>
-        @endfor
-        {{-- <#?php $nilai_awal = 0; ?>
-        @while ($nilai_awal < $jumlah)
-        <tr>
-          <td>{{ $npm[$nilai_awal] }}</td>
-          <td>{{ $nama[$nilai_awal] }}</td>
-          <td>Laki-Laki</td>
-          <td>08 November 2003</td>
-        </tr>
-        <#?php $nilai_awal++ ?>
-        @endwhile --}}
-      </tbody>
-    </table>
-  </div>
+          </thead>
+          <tbody>
+            {{-- Kode Dibawah Menggunakan For Loop --}}
+            @for ($i = 0; $i < $jumlah; $i++)
+                <tr>
+                  <td>{{ $npm[$i] }}</td>
+                  <td>{{ $nama[$i] }}</td>
+                  <td>Laki-Laki</td>
+                  <td>21 Januari 2004</td>
+                </tr>
+            @endfor
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-6">
+        <h4>Form Mahasiswa</h4>
+        <form action="" method="GET">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="">NPM</label>
+              <input type="number" name="npm" class="form-control" placeholder="Input NPM">
+            </div>
+          <div class="col-sm-6">
+            <label for="">Nama Mahasiswa</label>
+            <input type="text" name="nama_mahasiswa" class="form-control" placeholder="Input Nama Mahasiswa">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="">Tanggal Lahir</label>
+            <input type="date" name="tgl_lahir" id="" class="form-control">
+          </div>
+          <div class="col-sm-6">
+            <label for="">Program Studi</label>
+            <select name="prodi" class="form-control">
+              <option value="1">Sistem Informasi</option>
+              <option value="2">Teknologi Informasi</option>
+              <option value="3">Sains Data</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-12">
+              <button class="btn btn-primary" style="width: 100%" type="submit">Simpan</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
