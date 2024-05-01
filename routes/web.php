@@ -10,33 +10,14 @@ Route::get('about', function () {
     return view('about');
 });
 
-Route::get('profile', function () {
-    $nama = 'Muhammad Iqbal Faiz';
-    // return view('profile', compact('nama'));
-    // Command diatas digunakan pada saat memanggil data yang sifatnya banyak
-    return view('profile')->with('nama', $nama);
-    // Sedangkan command "with" digunakan pada saat menmanggil data yang sifatnya tunggal
+Route::get('tambah', function () {
+    return view('tambah');
 });
 
-Route::get('mahasiswa', function () {
-    $npm = [123,124,125,126];
-    $nama = ['Muhammad Iqbal Faiz','Agita Muhammad Ramadhan S','Rizky Wira Nanda P','Anugrah TG Putra A H'];
-    $jumlah = count($npm);
-    return view('mahasiswa', compact('npm', 'jumlah', 'nama'));
+Route::get('produk', function () {
+    $kode = ["BRG001","BRG002","BRG003","BRG004","BRG005","BRG006","BRG007","BRG008","BRG009","BRG010"];
+    $nama = ['Indomie Goreng Original','Indomie Goreng Rendang','Indomie Goreng Aceh','Indomie Goreng Jumbo','Indomie Goreng Pedas','Indomie Goreng Dendeng Balado','Indomie Goreng Cabe Ijo','Indomie Goreng Iga Penyet','Indomie Goreng Cakalang','Indomie Goreng Sate'];
+    $harga = [3100,3400,3500,4100,3600,3750,3000,3800,3400,3200];
+    $jumlah = count($kode);
+    return view('produk', compact('kode', 'jumlah', 'nama', 'harga'));
 });
-
-// // While Loop
-// Route::get('array', function(){
-//     $nilai_awal = 1;
-//     while ($nilai_awal <= 5) {
-//         echo 'Hello Laravel ' . $nilai_awal . 'x<br>';
-//         $nilai_awal++;
-//     }
-// });
-
-// // For Loop
-// Route::get('array', function(){
-//     for ($i=1; $i <= 5; $i++) { 
-//         echo 'Hello World ' . $i . 'x<br>';
-//     }
-// });
